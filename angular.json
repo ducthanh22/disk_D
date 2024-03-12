@@ -84,7 +84,8 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/netlify.toml"
             ],
             "styles": [
               "src/styles.css",
