@@ -1,6 +1,6 @@
 .table{
-    tbody{
-        tr{
+    :is(tbody){
+        :is(tr){
             .img{
                 padding-left: 2em;
                 width: 25%;
