@@ -4,7 +4,7 @@ import { CategoriesService } from 'src/app/service';
 import { ProducesService } from 'src/app/service/produces.service';
 import { ProductService } from 'src/app/service/product.service';
 
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +13,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 })
 export class ProductsComponent {
 
-  public Editor = ClassicEditor;
+  // public Editor = ClassicEditor;
 
   loading: boolean = true;
   page: number = 1;

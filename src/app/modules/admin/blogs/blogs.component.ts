@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 import { NewsService } from 'src/app/service/news.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { NewsService } from 'src/app/service/news.service';
   styleUrls: ['./blogs.component.css']
 })
 export class BlogsAdminComponent {
-  public Editor = ClassicEditor;
+
 
   loading: boolean = true;
   page: number = 1;

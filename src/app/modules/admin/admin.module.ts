@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { OrderComponent } from './order/order.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ExportbillComponent } from './exportbill/exportbill.component';
 import { ProducesComponent } from './produces/produces.component';
 import { ImportbillComponent } from './importbill/importbill.component';
@@ -41,7 +40,6 @@ import { StaffComponent } from './staff/staff.component';
     FormsModule,
     ReactiveFormsModule,
     FormsModule,
-    CKEditorModule
   ],
   providers: [
     CategoriesService,  
