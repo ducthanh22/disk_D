@@ -3,7 +3,7 @@ import { CategoriesDto } from 'src/app/model';
 
 import { CategoriesService } from 'src/app/service';
 // import { PrimeIcons, MenuItem } from 'primeng/api';
-import { Table } from 'primeng/table';
+
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
@@ -17,7 +17,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent {
-  @ViewChild('dt') table!: Table;
+
   Dscategories: any[] = [];
   loading: boolean = true;
   page: number = 1;
