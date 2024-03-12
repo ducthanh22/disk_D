@@ -1,0 +1,91 @@
+
+/* styles.css */
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 55% 40%;
+    margin-top: 20px;
+  }
+  
+  .pay-left {
+    color: #333333;
+    font-weight: normal;
+    margin-right: 1em;
+  }
+  
+  .form-container {
+    width: 100%;
+    margin-top: 2em;
+    padding-bottom: 15px;
+    margin-bottom: 1em;
+  }
+  
+  .input-field {
+    width: 90%;
+    height: 2em;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 1.5em;
+    padding-left: 1em;
+    margin-bottom: 20px;
+  }
+  
+  .button-submit {
+    border: none;
+    margin-left: 50%;
+    margin-top: 2em;
+    font-weight: bold;
+    font-size: 1.3em;
+    border-radius: 5px;
+    width: 24%;
+    height: 3em;
+    background-color: #01a14b;
+    color: aliceblue;
+  }
+  
+  .pay-right {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* styles.css */
+.product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em; /* Khoảng cách giữa các sản phẩm */
+    
+  }
+  
+  .product img {
+    width: 20%;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 50px;
+    margin-left: 50px;
+
+  }
+  
+  .product p {
+    font-weight: 500;
+    color: #4b4b4b;
+    margin-right: 50px;
+    padding-left: 1em;
+  }
+  
+  .product span {
+    font-size: 1em;
+    color: black;
+    margin-right: 0.5em;
+  }
+  
+  .total-price {
+    font-size: 1.2em;
+    margin-top: 1em; /* Khoảng cách giữa sản phẩm và tổng */
+    color: #d1182e;
+    font-weight: bolder;
+  }
+  
+
+  

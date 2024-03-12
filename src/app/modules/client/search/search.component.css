@@ -1,0 +1,40 @@
+.title{
+    bottom: -50px; 
+    transition: all ease-in-out 0.3s; 
+    background: #0880e8;
+    padding: 15px 20px;
+    display: flex;
+    height: 80px;
+  }
+  .title_1{
+      width: 80%;
+  
+  }
+  .title_2{
+      width: 20%;
+  
+  }
+  
+  h6{
+      color: aliceblue;
+     font-weight: bold;
+  }
+  p{
+      color: aliceblue;
+      
+  }
+  .title_2 a{
+    color: aliceblue;
+}
+  i.bi {
+      font-size: 24px;
+  }
+  .button{
+      margin-left: 10px;
+  }
+  .img-fluid{
+      width: 100%;
+      height: 400px;
+      margin-top: 30px;
+  }
+  

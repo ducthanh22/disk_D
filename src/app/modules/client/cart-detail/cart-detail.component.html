@@ -1,0 +1,80 @@
+
+<div style="display: flex;margin-bottom: 20px;">
+    <div><a style="margin-left: 230px; font: weight 1px; font-size: 30px;"href="/client/cart">Giỏ hàng</a></div>
+    <div><a style="margin-left: 2em; font: weight 1px;font-size: 30px;color: rgb(255, 115, 0);"href="/client/cart_detail">Đơn hàng của bạn</a></div>
+</div>
+
+<div style="width: 70%; margin-left: 15%;vertical-align: middle;">
+    <table class="table">
+        <thead>
+            <tr class="table-primary">
+                <th style="text-align: center;">STT</th>
+                <th style="text-align: center;">Địa Chỉ</th>
+                <th style="text-align: center;">Giá tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of Dsorder; let i = index" >
+                <td style="text-align: center;">{{i+1}}</td>
+                <td style="text-align: center;">{{x.address}}</td>
+                <td style="text-align: center;">{{x.Price}}</td> 
+                <td ><i class="bi bi-eye" (click)="getbydetail(x.id)" data-bs-toggle="modal" data-bs-target="#detail"></i></td> 
+
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="modal fade" id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Chi tiết </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div style="max-height: 100%; overflow: auto;">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col" class="text-center" >Mã chi tiết</th>
+                                <th scope="col" class="text-center" >Mã đơn hàng</th>
+                                <th scope="col" class="text-center">Ảnh</th>
+                                <th scope="col" class="text-center" >Tên sản phẩm</th>
+                                <th scope="col" class="text-center" >Giá</th>
+                                <th scope="col" class="text-center" >Số lượng</th>
+                                <th scope="col" class="text-center">Tổng</th>
+                                <th scope="col" class="text-center" style="width:20%">Trạng thái</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let x of detail">
+                                <td class="text-center">{{x.id}}</td>
+                                <td class="text-center">{{x.Id_Order}}</td>
+                                <td class="text-center"><img src="./assets/admin/img/{{x.Product.Image}}"
+                                        style="width: 100px;"></td>
+                                <td class="text-center">{{x.Product.Name}}</td>
+                                <td class="text-center">{{x.Price | currency:'VND' }}</td>
+                                <td class="text-center">{{x.Quantity}}</td>
+                                <td class="text-center">{{x.Quantity*x.Price | currency:'VND' }}</td>
+                                <td class="text-center" *ngIf="x.Order.status==1" ><a>Đang giao hàng</a><br> <button style="color: red;">đã lấy đơn</button></td>
+                                <td class="text-center" *ngIf="x.Order.status==0 " ><a>Chờ duyệt</a></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+/* Đặt kiểu chung cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Kiểu cho khối chứa chi tiết tin tức */
+  .news-detail {
+    max-width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Kiểu cho ảnh tin tức */
+  .news-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Kiểu cho tiêu đề tin tức */
+  .news-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  /* Kiểu cho nội dung tin tức */
+  .news-content {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Kiểu cho khối chứa bình luận */
+  .comment-container {
+    max-width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Kiểu cho tiêu đề bình luận */
+  .comment-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Kiểu cho ô textarea trong form bình luận */
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+  }
+  
+  /* Kiểu cho nút gửi bình luận */
+  .comment-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Kiểu cho danh sách bình luận */
+  .comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Kiểu cho mỗi mục bình luận */
+  .comment-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    color: #555;
+  }
+  

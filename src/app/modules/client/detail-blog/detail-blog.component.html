@@ -1,0 +1,28 @@
+<div class="news-detail"*ngIf="datas" >
+    <!-- Phần Ảnh -->
+    <img class="news-image"[src]="'./assets/admin/img_blog/'+ datas?.Image"  alt="Tin Tức">
+  
+    <!-- Phần Tiêu Đề -->
+    <h1 class="news-title" [innerHTML]="datas?.Title" style="text-align: center;"></h1>
+  
+    <!-- Phần Nội Dung -->
+    <div class="news-content">
+      <p  [innerHTML]="datas?.Content"></p>
+    </div>
+
+    <div class="comment-container">
+        <h2>Bình Luận</h2>
+      
+        <div class="comment-form">
+          <textarea placeholder="Viết bình luận" [(ngModel)]="Comment.Content" [ngModelOptions]="{ standalone: true }"></textarea>
+          <button (click)="AddComment()">Gửi</button>
+        </div>
+      
+        <ul class="comments-list" *ngFor="let x of CommentBlog">
+          <!-- Các mục bình luận sẽ được hiển thị ở đây -->
+          <li class="comment-item">{{x.User.name}}: {{x.Content}}</li>
+          <!-- <li class="comment-item">Bình luận 2: Nội dung bình luận 2</li> -->
+          <!-- Thêm các mục bình luận khác nếu cần -->
+        </ul>
+      </div>
+  </div>

@@ -1,0 +1,14 @@
+.modal-body a{
+    margin-bottom: 50px;
+ font-weight: 600;
+ /* color: aqua; */
+    /* margin-left: 30px; */
+}
+.total-price {
+    font-size: 1.2em;
+    margin-top: 1em; 
+    color: #d1182e;
+    font-weight: bolder;
+    text-align: center;
+    /* vertical-align: middle; */
+  }

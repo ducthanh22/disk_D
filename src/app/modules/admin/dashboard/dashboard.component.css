@@ -1,0 +1,121 @@
+
+.formdas{
+    display: flex;
+    width: 800px;
+}
+
+
+.dt1{
+  margin-left: 50px;
+  display: flex;
+  margin-top: 30px;
+}
+
+.inp{
+    width: 300px;
+}
+
+.dt2{
+    margin-left: 100px;
+    display: flex;
+    margin-top: 30px;
+
+}
+.btndas{
+    margin-left: 50px;
+    margin-top: 35px;
+    height: 40px;
+    display: flex;
+   
+}
+.btndas a{
+    margin-top: -1px;
+
+}
+.chartparent{
+    display:flex;
+    margin-top: 30px;
+    width: 96%;
+    /* height: 200px; */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart1{
+    margin-top: 30px;
+    margin-left: 50px;
+   width: 550px;
+   height: 300px;
+
+   /* background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.chart2{
+    margin-top: 30px;
+    margin-left: 100px;
+    width: 250px;
+    
+   /* background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.overview{
+    display: flex
+}
+.OV1{
+    display: flex;
+    margin-top: 50px;
+    
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+}
+.OV2{
+    display: flex;
+
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 300px;
+    height: 150px;
+
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+i.bi.bi-currency-dollar {
+    margin-left: 25px;
+    font-size: 40px; /* Adjust the font size as needed */
+    color: rgb(27, 130, 221); /* Set the desired text color */
+    margin-right: 8px; /* Add some spacing to the right */
+    /* Add any additional styling you desire */
+  }
+
+  i.bi.bi-bar-chart-fill{
+    margin-left: 25px;
+    font-size: 40px; /* Adjust the font size as needed */
+    color: rgb(27, 130, 221); /* Set the desired text color */
+    margin-right: 8px; /* Add some spacing to the right */
+    /* Add any additional styling you desire */
+  }
+
+  i.bi.bi-bag-check-fill{
+    margin-left: 25px;
+    font-size: 40px; /* Adjust the font size as needed */
+    color: rgb(27, 130, 221); /* Set the desired text color */
+    margin-right: 8px; /* Add some spacing to the right */
+    /* Add any additional styling you desire */
+  }
+
+  .Title{
+    margin-top: 20px;
+  }
+
+
+  

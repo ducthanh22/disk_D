@@ -1,0 +1,73 @@
+<app-header (keyword)="receiveKeyword($event)"></app-header>
+<!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+    </div>
+  </section><!-- End Hero -->
+  <main id="main">
+    <router-outlet></router-outlet>
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Câu hỏi thường gặp</h2>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Sản phẩm có giống với màu và hình ảnh thực tế sản phẩm không?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Chào bạn, sản phẩm như hình bạn nhé. Màu sắc qua ảnh chụp sẽ có thể có chút chênh lệch không đáng kể so với thực tế ạ.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Đổi hàng trực tiếp tại cửa hàng nào?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Chào bạn, ACHINO áp dụng đổi hàng trực tiếp trên toàn hệ thống cửa hàng bạn nhé!
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Sản phẩm có được bảo hành không?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Chào bạn, ACHINO không có chính sách bảo hành cho sản phẩm nhé. Rất xin lỗi và mong bạn thông cảm.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">ACHINO có chấp nhận trả sản phẩm hoàn tiền không?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Chào bạn, ACHINO có chấp nhận trả sản phẩm hoàn tiền nhưng chỉ đối với trường hợp khi lỗi sự cố hay lỗi sản phẩm xuất phát từ phía ACHINO và sản phẩm đó hoặc sản phẩm tương tự không còn hàng.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Thời gian áp dụng đổi sản phẩm là bao lâu?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Chào bạn, sản phẩm được đổi hàng trong vòng 7 ngày bạn nhé. Bạn vui lòng gửi/mang theo hóa đơn và sản phẩm phải còn nguyên tem mác, còn nguyên trạng như lúc nhận hàng đến ACHINO để được hỗ trợ đổi hàng ạ.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    
+  </main><!-- End #main -->
+  
+<app-footer></app-footer>

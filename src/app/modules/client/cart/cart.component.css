@@ -1,0 +1,51 @@
+.table{
+    tbody{
+        tr{
+            .img{
+                padding-left: 2em;
+                width: 25%;
+                
+            }
+            .name{
+                font-size:1,5em;
+                width:35%;
+                padding-top: 1em;
+                color:black;
+                font-weight: bolder;
+                
+            }
+            .quantity{
+                font-size:1,5em; width: 20%;
+                padding-top: 1em;
+                color: black;
+                font-weight: bolder;
+            }
+            .price{
+                font-size:1,5em;
+                color: black;padding-top: 1em;
+                font-weight: bolder;
+            }
+            .xoa{
+                font-size:1.8em;
+                color: #f50c0c;padding-top: 1em;
+                font-weight: bolder;
+              
+            }
+            .stt{
+                font-size:1,5em;
+                color: black;
+                padding-top: 1em;
+                font-weight: bolder;
+
+            }
+
+        }
+    }
+}
+a{
+    color: #000;
+}
+
+div :hover{
+    color: rgb(255, 115, 0);
+}

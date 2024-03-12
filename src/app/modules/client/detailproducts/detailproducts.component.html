@@ -1,0 +1,38 @@
+<!-- ======= Portfolio Details Section ======= -->
+<section id="portfolio-details" class="portfolio-details">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div class="portfolio-details-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"*ngIf="datas"  >
+              <img [src]="'./assets/admin/img/'+ datas?.Image" alt="item" class="img">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="portfolio-info">
+          <h3>{{datas?.Name}}</h3>
+          <ul>
+            <li><strong>Loại Sản Phẩm</strong>:{{datas?.Category?.name}}</li>
+            <li><strong>Màu Sắc</strong>: {{datas?.Colors[0]?.ColorName}}</li>
+            <li><strong>Size</strong>:{{datas?.Sizes[0]?.NameSize}}</li>
+            <li><strong>Giá</strong>: {{datas?.Prices[0]?.Price_product | currency:'VND' }}</li>
+            
+            <!-- <li><strong>Project URL</strong>: <a href="#">Achinoshop@gmail.com</a></li> -->
+          </ul>
+          <button class="btn btn-warning" type="button" (click)="addtocart(datas.id)"><i class="bi bi-plus-lg"></i>Thêm vào giỏ hàng</button>
+        </div>
+        <div class="portfolio-description" >
+          <h2>Mô tả</h2>
+          <p [innerHtml] = datas?.Describe>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Portfolio Details Section -->

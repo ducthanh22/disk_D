@@ -1,0 +1,38 @@
+/* CSS cho phần tìm kiếm Blog */
+.Search {
+   
+    padding: 15px; /* Khoảng cách bên trong phần tìm kiếm */
+    border-radius: 5px; /* Bo góc */
+    text-align: center; /* Căn giữa nội dung */
+    margin-bottom: 5%;
+  }
+  
+  .Search h5 {
+    font-size: 1.2em; /* Cỡ chữ tiêu đề */
+  }
+  
+  /* CSS cho ô nhập liệu */
+  .blog_search {
+    width: 50%; /* Độ rộng */
+    padding: 10px; /* Khoảng cách bên trong ô nhập liệu */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 5px; /* Bo góc */
+  }
+  
+  /* CSS cho nút tìm kiếm */
+  .blog_search + button {
+    background-color: #007bff; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    border: none; /* Loại bỏ đường viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 15px; /* Khoảng cách bên trong nút */
+    cursor: pointer; /* Con trỏ biến thành bàn tay khi di chuột qua nút */
+  }
+  /* Đưa biểu tượng tìm kiếm về giữa */
+  .blog_search + button i {
+    vertical-align: middle;
+  }
+  .entry{
+    background-color: #fff;
+    border-radius: 3%;
+  }

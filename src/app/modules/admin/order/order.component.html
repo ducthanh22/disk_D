@@ -1,0 +1,129 @@
+<div class="pagetitle">
+    <h1>Quản Lý Đơn hàng</h1>
+</div><!-- End Page Title -->
+<section class="section dashboard">
+    <!-- Trong file .component.html của bạn -->
+    <form (ngSubmit)="onSubmitSearch()" class="form-inline mt-4">
+        <div class="d-flex flex-row">
+            <div class="form-group col-auto mr-2">
+                <label for="keyWord" class="sr-only">Search</label>
+                <input type="search" class="form-control" id="keyWord" [(ngModel)]="keyword"
+                    [ngModelOptions]="{ standalone: true }" placeholder="Nhập từ khoá " />
+            </div>
+            <button type="submit" class="btn btn-primary bt">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </form>
+    <br>
+    <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        <i class="bi bi-plus-lg"></i> Thêm mới
+    </button>
+
+    <div style="max-height: 320px; overflow: auto;">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col" class="text-center" style="width:10%">Mã</th>
+                    <th scope="col" class="text-center" style="width:20%">Tên</th>
+                    <th scope="col" class="text-center" style="width:40%">Địa chỉ</th>
+                    <th scope="col" class="text-center" style="width:20%">Trạng Thái</th>
+                    <th scope="col" class="text-center" style="width:10%">Chức Năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of datas">
+                    <td class="text-center">{{x.id}}</td>
+                    <td class="text-center" (click)="getbydetail(x.id)" data-bs-toggle="modal" data-bs-target="#detail">
+                        {{x.User.name}}</td>
+
+                    <td class="text-center">{{x.address }}</td>
+                    <td class="text-center" *ngIf="x.status==0" style="color: rgb(255, 170, 0);"><button  (click)="update(x.id)">Chờ duyệt</button></td>
+                    <td class="text-center" *ngIf="x.status==1" style="color: rgb(0, 64, 255);"
+                        >Xác nhận hoàn thành</td>
+                    <!-- <td class="text-center" *ngIf="x.status==2" style="color: rgb(0, 255, 89);">Hoàn thành</td> -->
+
+                    <td>
+                        <i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#edit"
+                            style="color: rgb(6, 60, 253); margin-left: 10px; "></i>
+                        <i class="bi bi-trash3" style="color: red; margin-left: 30px;"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item ">
+                <a class="page-link" (click)="Previousdata()">Previous</a>
+            </li>
+            <li class="page-item" *ngFor="let x of totalPageArray"><a class="page-link" (click)="Setpage(x)">{{x}}</a>
+            </li>
+
+            <li class="page-item" (click)="Nextdata()">
+                <a class="page-link">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+</section>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Chi tiết </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <a>Tên Khách hàng : {{order?.User.name}}</a>
+                <br>
+                <a>Email :  {{order?.User.email}}</a> <br>
+                <a>Số điện thoại :  {{order?.User.sdt}}</a> <br>
+                <a>Địa chỉ :  {{order?.address}}</a>
+                <div style="max-height: 80%; overflow: auto;">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col" class="text-center" style="width:10%">Mã chi tiết</th>
+                                <th scope="col" class="text-center" style="width:10%">Mã đơn hàng</th>
+                                <th scope="col" class="text-center" style="width:20%">Ảnh</th>
+                                <th scope="col" class="text-center" style="width:20%">Tên sản phẩm</th>
+                                <th scope="col" class="text-center" style="width:10%">giá</th>
+                                <th scope="col" class="text-center" style="width:10%">Số lượng</th>
+                                <th scope="col" class="text-center" style="width:20%">Tổng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let x of detail">
+                                <td class="text-center">{{x.id}}</td>
+                                <td class="text-center">{{x.Id_Order}}</td>
+                                <td class="text-center"><img src="./assets/admin/img/{{x.Product.Image}}"
+                                        style="width: 100px;"></td>
+                                <td class="text-center">{{x.Product.Name}}</td>
+                                <td class="text-center">{{x.Price | currency:'VND' }}</td>
+                                <td class="text-center">{{x.Quantity}}</td>
+                                <td class="text-center">{{x.Quantity*x.Price | currency:'VND' }}</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="total-price">Tổng: {{order?.Price | currency:'VND'}}</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="pagetitle">
+  <h1>Thống kê</h1>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+  <form action="" class="formdas">
+    <div class="form-group dt1">
+      <label for="usr">Ngày bắt đầu:</label>
+      <input type="date" class="form-control inp" id="usr"[(ngModel)]="date.startDate" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group dt2">
+      <label for="pwd">Ngày kết thúc:</label>
+      <input type="date" class="form-control inp " id="pwd"[(ngModel)]="date.endDate" [ngModelOptions]="{standalone: true}">
+    </div>
+    <button class="btn btn-primary btndas" (click)="getStatistic()"><i class="bi bi-search"></i></button>
+    <button class="btn btn-primary btndas"(click)="reset()"><i class="bi bi-arrow-counterclockwise"></i><a>reset</a></button>
+  </form>
+
+
+  <div class="overview">
+    <div class="OV1">
+      <div>
+        <i class="bi bi-currency-dollar"></i>
+      </div>
+      <div class="Title">
+        <h5>Doanh Thu</h5>
+        <br>
+        <h4>{{datas?.exportBillTotalValue| currency:'VND'}}</h4>
+      </div>
+     
+    </div>
+    <div class="OV2">
+      <div>
+        <i class="bi bi-bar-chart-fill"></i>
+      </div>
+      <div class="Title">
+        <h5>Số lượng khách hàng</h5>
+        <br>
+       <h4>{{datas?.userCount}}</h4>
+      </div>
+      
+    </div>
+    <div class="OV2">
+      <div>
+        <i class="bi bi-bag-check-fill"></i>
+      </div>
+      <div class="Title">
+        <h5>Đơn hàng</h5>
+        <br>
+       <h4>{{datas?.orderCount}}</h4>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="chartparent">
+    <div class="chart1" (change)="getMonth()">
+       <p-chart class="chartline" type="line" [data]="lineChartData" [options]="lineChartOptions"></p-chart>
+    </div>
+    <div class="chart2" (change)="chartdoughnut()">
+       <p-chart type="doughnut" [data]="doughnutChartData" [options]="doughnutChartOptions"></p-chart>
+    </div>
+ </div>
+ 
+
+
+</section>

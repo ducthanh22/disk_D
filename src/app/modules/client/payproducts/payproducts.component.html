@@ -1,0 +1,32 @@
+
+
+<div class="container">
+  <div class="pay-left">
+    <h2>Thông tin giao hàng</h2>
+    <form class="form-container" action="submit" [formGroup]="FormOrder">
+      <!-- ... -->
+      <input name="tenKhachHang" formControlName="fullname" placeholder="Họ và tên" class="input-field" />
+
+
+      <input name="email"formControlName="email" placeholder="Email" class="input-field" />
+
+      <input name="sdt"formControlName="sdt" placeholder="Số điện thoại" class="input-field" />
+
+
+      <input name="diaChi"formControlName="address" placeholder="Địa chỉ" class="input-field" />
+
+      <!-- <input placeholder="Ghi chú..." class="input-field" /> -->
+
+
+      <button type="submit" class="button-submit"(click)="SaveAdd()">Hoàn tất đơn hàng</button>
+    </form>
+  </div>
+  <div class="pay-right">
+    <div class="product" *ngFor="let x of Carts">
+      <img src="./assets/client/assets/img/portfolio/a4.png" />
+      <p><br /><span>Số lượng: {{x.quantity}}</span></p>
+      <span>{{x.quantity * x.res.Prices[0].Price_product | currency:'VND' }}</span>
+    </div>
+    <p class="total-price">Tổng: {{getTotalPrice() | currency:'VND'}}</p>
+  </div>
+</div>

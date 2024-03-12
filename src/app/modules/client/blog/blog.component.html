@@ -1,0 +1,67 @@
+<section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+        <div class="Search">
+          <h5>Tìm kiếm Blog</h5>
+          <form (ngSubmit)="onSubmitSearch()">
+            <input type="text" class="blog_search" [(ngModel)]="keyword" name="keyword">
+            <button type="submit"><i class="bi bi-search"></i></button>
+          </form>
+        </div>
+
+        <div class=" entries">
+
+          <article class="entry" *ngFor="let x of datas">
+
+            <div class="entry-img">
+              <img src="./assets/admin/img_blog/{{x.Image}}" alt="" style="width: 1000px; vertical-align: middle;" class="img-fluid">
+            </div>
+
+            <h2 class="entry-title">
+              <a href="blog-single.html">{{x.Title}}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <!-- <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li> -->
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i>{{x.createdAt | date: 'dd/MM/yyyy'}}</li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <!-- <p>
+                Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
+                Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+              </p> -->
+              <div class="read-more">
+                <a [routerLink]="['/client/detail_blog', x.id]">Read More</a>
+              </div>
+            </div>
+
+          </article><!-- End blog entry -->
+
+  
+
+          <br>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link" (click)="Previousdata()">Previous</a>
+                </li>
+                <li class="page-item" *ngFor="let x of totalPageArray"><a class="page-link" (click)="Setpage(x)">{{x}}</a>
+                </li>
+        
+                <li class="page-item" (click)="Nextdata()">
+                    <a class="page-link">Next</a>
+                </li>
+            </ul>
+        </nav>
+
+        </div><!-- End blog entries list -->
+
+        
+      </div>
+
+
+  </section><!-- End Blog Section -->

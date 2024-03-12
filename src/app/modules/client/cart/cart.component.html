@@ -1,0 +1,39 @@
+
+<div style="display: flex;margin-bottom: 20px;">
+    <div><a style="margin-left: 2.5em; font: weight 1px; font-size: 30px;color: rgb(255, 115, 0);">Giỏ hàng</a></div>
+    <div><a style="margin-left: 2em; font: weight 1px;font-size: 30px;"href="/client/cart_detail">Đơn hàng của bạn</a></div>
+</div>
+
+<div style="width: 90%; margin-left: 5%;" *ngIf="Carts.length">
+    <table class="table">
+        <thead>
+            <tr class="table-primary">
+                <th style="width: 2px;">STT</th>
+                <th style="text-align: center;">Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of Carts; let i = index" >
+                <td class="stt">{{i+1}}</td>
+                <td class="img"><img style="width: 30%;margin-left: 95px;" src="./assets/admin/img/{{x.res.Image}}" /></td>
+                <td class="name">{{x.res.Name}}</td>
+                <td class="quantity">
+                    <button (click)="Downquantity(i,x.quantity)" style="border: 2px solid rgb(129, 211, 241);background-color: white; margin-right: 1px;width: 25px;">-</button>
+                    <input (change)="Updatequantity(i,$event)" type="number" [value]="x.quantity" style="width: 20%;text-align: center;border: 2px solid rgb(129, 211, 241);margin-right: 1px;" min="0">
+                    <button (click)="Upquantity(i,x.quantity)"style="border: 2px solid rgb(129, 211, 241);background-color: white;">+</button>
+
+                </td>
+                <td class="price">{{x.quantity * x.res.Prices[0]?.Price_product | currency:'VND' }}</td>
+                <td class="xoa"><i class="bi bi-trash3"(click)="Deletecart(i)"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="margin-left: 60%;">
+    <button style="border: none; font-weight: bold; font-size: 1.3em; border-radius: 5px; width: 34%; height: 3em; background-color: #d1182e; color: aliceblue;" (click)="Deleteall()">Xóa tất cả</button>
+    <button onclick="navigate('/pay')" style="border: none; margin-left: 2em; font-weight: bold; font-size: 1.3em; border-radius: 5px; width: 34%; height: 3em; background-color: #01a14b; color: aliceblue;" (click)="navigatePay()">Thanh toán</button>
+</div>

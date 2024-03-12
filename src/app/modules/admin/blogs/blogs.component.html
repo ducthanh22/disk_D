@@ -1,0 +1,138 @@
+<div class="pagetitle">
+    <h1>Quản Lý Tin Tức</h1>
+  </div><!-- End Page Title -->
+  <section class="section dashboard">
+    <!-- Trong file .component.html của bạn -->
+    <form (ngSubmit)="onSubmitSearch()" class="form-inline mt-4">
+      <div class="d-flex flex-row">
+        <div class="form-group col-auto mr-2">
+          <label for="keyWord" class="sr-only">Search</label>
+          <input type="search" class="form-control" id="keyWord" [(ngModel)]="keyword"
+            [ngModelOptions]="{ standalone: true }" placeholder="Nhập từ khoá " />
+        </div>
+        <button type="submit" class="btn btn-primary bt">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </form>
+    <br>
+   
+  
+    <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop">
+      <i class="bi bi-plus-lg"></i> Thêm mới
+    </button>
+  
+    <div style="max-height: 320px; overflow: auto;">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col" class="text-center" >Mã</th>
+            <th scope="col" class="text-center" >Ảnh</th>
+            <th scope="col" class="text-center" >Tiêu đề</th>
+            <th scope="col" class="text-center" >Nội dung</th>
+            <th scope="col" class="text-center" style="width:10%">Chức Năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of datas; let rowIndex = index">
+            <th class="text-center">{{ x.id}}</th>
+            <td class="text-center"><img src="./assets/admin/img_blog/{{x.Image}}" style="width: 100px;"></td>
+            <td class="text-center">{{ x.Title }}</td>
+            <td class="text-center">{{ x.Content }}</td>
+            
+            <td>
+              <i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#edit"
+                style="color: rgb(6, 60, 253);  " (click)="edit(x)"></i>
+              <i class="bi bi-trash3" style="color: red; margin-left: 30px; " (click)="Delete(x.id)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item ">
+          <a class="page-link" (click)="Previousdata()">Previous</a>
+        </li>
+        <li class="page-item" *ngFor="let x of totalPageArray"><a class="page-link" (click)="Setpage(x)">{{x}}</a></li>
+  
+        <li class="page-item" (click)="Nextdata()">
+          <a class="page-link">Next</a>
+        </li>
+      </ul>
+    </nav>
+  
+  </section>
+  
+  
+  
+  
+  <!-- Modal -->
+  
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Thêm tin tức</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+          <div class="row" [formGroup]="FormBlog" enctype="multipart/form-data">
+            <div class="col-12 form-group">
+              <label for="name" class="col-form-label">Tiêu đề: <span style="color: red;">*</span></label>
+              <input type="text" formControlName="Title" pInputText class="form-control" id="Name">
+            </div>
+            <div class="col-12 form-group">
+              <label for="name" class="col-form-label">Nội dung: <span style="color: red;">*</span></label>
+              <ckeditor [editor]="Editor"formControlName="Content"class="form-control" id="Describe" ></ckeditor>
+            </div>
+            <div class="col-12 form-group">
+              <label for="name" class="col-form-label">Ảnh: <span style="color: red;">*</span></label>
+              <input type="file" formControlName="Image" (change)="onFileSelected($event)" pInputText class="form-control" id="Image"accept=".jpg,.png">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x" (click)="resetForm()"></i> Đóng</button>
+          <button *ngIf="FormBlog.valid" type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="SaveAdd()"><i
+              class="bi bi-floppy"></i> Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Sửa sản phẩm</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row" [formGroup]="FormBlog" enctype="multipart/form-data">
+                <div class="col-12 form-group">
+                  <label for="name" class="col-form-label">Tiêu đề: <span style="color: red;">*</span></label>
+                  <input type="text" formControlName="Title" pInputText class="form-control" id="Name">
+                </div>
+                <div class="col-12 form-group">
+                  <label for="name" class="col-form-label">Nội dung: <span style="color: red;">*</span></label>
+                  <ckeditor [editor]="Editor"formControlName="Content"class="form-control" id="Describe" ></ckeditor>
+                </div>
+                <div class="col-12 form-group">
+                  <label for="name" class="col-form-label">Ảnh: <span style="color: red;">*</span></label>
+                  <input type="file" formControlName="Image" (change)="onFileSelected($event)" pInputText class="form-control" id="Image"accept=".jpg,.png">
+                </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x" (click)="resetForm()"></i> Đóng</button>
+          <button  *ngIf="FormBlog.valid" type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="Update()"><i class="bi bi-floppy"></i> Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
