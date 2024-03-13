@@ -3,7 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path:'',redirectTo:'client/Home',pathMatch:'full'},
-  {path:'client/Home',redirectTo:'client/Home',pathMatch:'prefix'}
+  {path:'client/Home',redirectTo:'client/Home',pathMatch:'prefix'},
+  {
+    path: '',
+    data: {
+      title: 'Default',
+    },
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./Layout/template/template.module').then(
+            (x) => x.TemplateModule
+          ),
+      },
+    ],
+  },
 ];
 
 @NgModule({
