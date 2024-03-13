@@ -3,11 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path:'',redirectTo:'client/Home',pathMatch:'full'},
-  {path:'**',redirectTo:'client/Home'},
-
-
- 
-  {path:'/client/Home',redirectTo:'client/Home'}
+  {path:'client/Home',redirectTo:'client/Home',pathMatch:'prefix'}
 ];
 
 @NgModule({
