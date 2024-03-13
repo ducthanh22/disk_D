@@ -16,12 +16,12 @@
             <a class="nav-link scrollto" href="#">Danh Mục</a>
             <ul class="submenu">
               <li *ngFor="let x of Dscategories"><a class="nav-link scrollto"
-                  [routerLink]="['/client/categories', x.id]">{{x.name}}</a></li>
+                  [routerLink]="['/client/Categories', x.id]">{{x.name}}</a></li>
               <!-- Add more submenu items as needed -->
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="/client/blog">Blog</a></li>
-          <li><a class="nav-link scrollto" href="/client/cart"><i class="bi bi-cart"></i></a></li>
+          <li><a class="nav-link scrollto" href="/client/Blog">Blog</a></li>
+          <li><a class="nav-link scrollto" href="/client/Cart"><i class="bi bi-cart"></i></a></li>
           <li *ngIf="!getToken()"><a class="nav-link scrollto" href="Login">Đăng nhập</a></li>
         </ul>
       </nav><!-- .navbar -->

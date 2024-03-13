@@ -23,7 +23,7 @@ const routes: Routes = [
         title: 'Home',
       },
       {
-        path: 'about',
+        path: 'About',
         component: AboutComponent,
         title: 'About',
         
@@ -35,30 +35,30 @@ const routes: Routes = [
        
       },
       {
-        path: 'service',
+        path: 'Service',
         component:ServiceComponent,
         title: 'Service',
       },
       {
-        path: 'blog',
+        path: 'Blog',
         component:BlogComponent,
         title: 'Blog',
       },
       {
-        path: 'contact',
+        path: 'Contact',
         component:ContactComponent,
         title: 'Contact',
       },
-     {path:'cart',component:CartComponent,title:'Cart'},
+     {path:'Cart',component:CartComponent,title:'Cart'},
 
-     {path:'detail/:id',component:DetailproductsComponent,title:'Detail'},
+     {path:'Detail/:id',component:DetailproductsComponent,title:'Detail'},
      
-     {path:'pay',component:PayproductsComponent,title:'Pay'},
+     {path:'Pay',component:PayproductsComponent,title:'Pay'},
 
-     {path:'cart_detail',component:CartDetailComponent,title:'cart_detail'},
-     {path:'search',component:SearchComponent,title:'search'},
-     
-     {path:'detail_blog/:id',component:DetailBlogComponent,title:'detail_blog'}
+     {path:'Cart_detail',component:CartDetailComponent,title:'cart_detail'},
+     {path:'Search',component:SearchComponent,title:'search'},
+
+     {path:'Detail_blog/:id',component:DetailBlogComponent,title:'detail_blog'}
 
 
 
