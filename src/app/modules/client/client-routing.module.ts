@@ -18,7 +18,7 @@ const routes: Routes = [
   
   
       {
-        path: '',
+        path: 'Home',
         component:HomeComponent,
         title: 'Home',
       },
