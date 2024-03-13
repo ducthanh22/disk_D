@@ -85,7 +85,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/_directs"
+              "src/netlify.toml"
             ],
             "styles": [
               "src/styles.css",
