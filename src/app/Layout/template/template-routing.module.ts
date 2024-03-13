@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-  {path:'client',component:ClientClienttemplateComponent},
+  {path:'/client',component:ClientClienttemplateComponent},
   { path: 'admin', component: AdminAdmintemplateComponent,title:'Admin' },
   {
     path: '',
@@ -24,7 +24,7 @@ const routes: Routes = [
         },
         children: [
           {
-            path: 'client',
+            path: '/client',
             loadChildren: () =>
               import('../../modules/client/client.module').then(
                 (x) => x.ClientModule
