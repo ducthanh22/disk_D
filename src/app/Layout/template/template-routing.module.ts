@@ -8,8 +8,8 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-  {path:'client',component:ClientClienttemplateComponent},
-  { path: 'admin', component: AdminAdmintemplateComponent,title:'Admin' },
+  // {path:'client',component:ClientClienttemplateComponent},
+  // { path: 'admin', component: AdminAdmintemplateComponent,title:'Admin' },
   {
     path: '',
     data: {
