@@ -4,6 +4,21 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path:'',redirectTo:'client/Home',pathMatch:'full'},
 
+  {
+    path: '',
+    data: {
+      title: 'Default',
+    },
+    children: [
+      {
+        path: 'client',
+        loadChildren: () =>
+          import('./Layout/template/template.module').then(
+            (x) => x.TemplateModule
+          ),
+      },
+    ],
+  },
   
 ];
 

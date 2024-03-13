@@ -57,6 +57,7 @@ const routes: Routes = [
 
      {path:'cart_detail',component:CartDetailComponent,title:'cart_detail'},
      {path:'search',component:SearchComponent,title:'search'},
+     
      {path:'detail_blog/:id',component:DetailBlogComponent,title:'detail_blog'}
 
 
