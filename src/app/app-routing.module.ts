@@ -11,7 +11,7 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'client',
+        path: '',
         loadChildren: () =>
           import('./Layout/template/template.module').then(
             (x) => x.TemplateModule
